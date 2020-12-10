@@ -1,0 +1,87 @@
+*{
+	font-family: 'Roboto';
+	font-size: 16px;
+}
+header{
+	border-bottom: 1px solid black;
+}
+#base-footer{
+	border-top: 1px solid black;
+}
+#base-footer ul{
+	margin-top: 20px;
+}
+#base-footer ul li{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.nav-link{
+	font-size: 18px;
+}
+.heading{
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.heading-2{
+	font-size: 16px;
+	font-weight: 600;
+}
+blockquote {
+	margin-left: 100px;
+	margin-right: 100px;
+	background: #F2D1D1;
+	color: #333334;
+	padding: 20px 30px;
+	position: relative;
+	border-left: 35px solid #CE5959;
+}
+blockquote:before {
+	content: "\201C";
+	font-family: serif;
+	position: absolute;
+	left: -29px;
+	top: 5px;
+	color: #BCBCBC;
+	font-size: 50px;
+	text-shadow: 1px 2px 0 white;
+}
+blockquote p {
+	margin: 0 0 16px;
+	font-size: 20px;
+	letter-spacing: .05em;
+	line-height: 1.4;
+}
+blockquote cite {
+	font-style: normal;
+	font-weight: 300;
+}
+#comments{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.table-right-side{
+	text-align: center;
+}
+#price-table{
+	padding: 30px;
+}
+.input-group-text{
+	background: #F2D1D1;
+	border-top: 1px solid black;
+}
+.input-group-append button{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#info-about{
+	background: linear-gradient(to right, #CE5959, #F2D1D1);
+}
+#info-about ul{
+	margin-top: 20px;
+	padding: 10px;
+}
+#info-about li{
+	margin-right: 20px;
+}

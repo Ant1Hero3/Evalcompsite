@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<h1 class="heading">Оценочная компания «Актив»</h1>
+			<p>
+				В оценке сроки выполнения работ и рассчитываемая стоимость имущества играют определяющую роль. Понимая это, мы следуем правилу: не подводить клиентов со сроками и быть готовыми обосновать результаты оценки.  
+		<blockquote>
+			<p><span>«Заботимся о клиенте: делаем отчеты в срок и не теряя качества…»</span></p>
+			<footer class="blockquote-footer"><cite>Шлыкова Ольга Жамилевна, Заместитель Генерального директора ООО «Оценочная компания «Актив»</cite></footer>
+		</blockquote>	
+		<h1 class="heading">Наши клиенты</h1>
+			<p>
+				«ЛУКОЙЛ-ПЕРМЬ», «СМЗ», «ЛУКОЙЛ-Пермнефтеоргсинтез», Мотовилихинские Заводы, ЛМЗ, НПО "Искра", ГК «РИАЛ», «ЛУКОЙЛ-Пермнефтепродукт», «Уралкалий», «ЛУКОЙЛ-Транс», «Редуктор-ПМ», «Красный Октябрь»,  ТД «ЦВУМ», Сбербанк России и многие другие.  
+			</p>
+		<h1 class="heading">Наши аккредитации</h1>
+			<h2 class="heading-2">Банки</h2>
+				<p>
+					Официальная аккредитация получена в Сбербанке, Связь-Банке, Банках "Открытие", "Интеза", Татфондбанке, СКБ-Банке, Металлинвестбанке. Перечень банков, в которых аккредитована Оценочная компания «Актив», постоянно увеличивается
+				</p>
+			<h2 class="heading-2">НК "ЛУКОЙЛ"</h2>
+				<p>
+					Оценочная компания «Актив» - одна из двух компаний в Перми, аккредитованных в НК «ЛУКОЙЛ» для оценки имущества
+				</p>
+			<h2 class="heading-2">АИЖК</h2>
+				<p>
+					Агентство по ипотечному жилищному кредитованию
+				</p>
+			<h2 class="heading-2">Страхование профессиональной ответственности</h2>
+				<p>
+					Профессиональная ответственность специалистов-оценщиков и компании застрахована (обязательное и добровольное страхование) на сумму 105 млн. руб.
+				</p>
+			<h2 class="heading-2">Членство в СРО</h2>
+				<p>
+					Ассоциация СРО, Ассоциация "Кадастр-оценка"
+				</p>
+		<h1 class="heading">Наши сотрудники</h1>
+		<div class="row row-cols-1 row-cols-md-3">
+			<div class="col mb-4">
+				<div class="card">
+					<img src="{% static 'img/foto.png' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">Шлыкова Ольга Жамилевна, Заместитель генерального директора</h5>
+					    	<p class="card-text">Стаж работы в оценочной деятельности: 13 лет</p>
+							<p class="card-text">shlykova@aktiv.perm.ru</p>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-4">	
+				<div class="card">
+					<img src="{% static 'img/foto.png' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">Одина Светлана Владимировна, Ведущий оценщик</h5>
+					    	<p class="card-text">Стаж работы в оценочной деятельности: 11 лет</p>
+							<p class="card-text">ok@aktiv.perm.ru</p>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<img src="{% static 'img/foto.png' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">Езова Анастасия Андреевна, Оценщик</h5>
+					    	<p class="card-text">Стаж работы в оценочной деятельности: 5 лет</p>
+							<p class="card-text">ok2@aktiv.perm.ru</p>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<img src="{% static 'img/foto.png' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">Горбушина Надежда Алексеевна, Помощник оценщика</h5>
+					    	<p class="card-text">Стаж работы в оценочной деятельности: 3 года</p>
+							<p class="card-text">gna@aktiv.perm.ru</p>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<img src="{% static 'img/foto.png' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">Пономарев Роман Сергеевич, Помощник оценщика</h5>
+					    	<p class="card-text">Стаж работы в оценочной деятельности: 2 года</p>
+							<p class="card-text">prs@aktiv.perm.ru</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form action="{% url 'evalcompsite:createcomment' %}" method="POST">
+			{% csrf_token %}
+			<div class="container">
+				<h1 class="heading">Комментарии</h1>
+				<div class="input-group mb-3" style="margin-top: 20px">
+		  			<div class="input-group-prepend">
+		    			<span class="input-group-text">ФИО</span>
+		  			</div>
+		  			<input type="text" placeholder="Пример: Иван" aria-label="" name="name" class="form-control">
+				</div>
+				<div class="input-group">
+		  			<div class="input-group-prepend">
+		    			<span class="input-group-text">Введите ваш комментарий</span>
+		  			</div>
+		  			<textarea class="form-control" aria-label="" name="comment"></textarea>
+				</div>
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit">Оставить комментарий</button>
+				</div>
+			</div>
+		</form>
+		{% if comments_list %}
+		{% for comment in comments_list %}
+		<div class="card" id="comments">
+			<div class="card-header">
+				{{comment.date}}
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">{{comment.name}}</h5>
+					<p class="card-text">{{comment.comment}}</p>
+			</div>
+		</div>
+		<br>
+		{% endfor %}
+		{% else %}
+		<div class="card">
+			<div class="card-header">
+			</div>
+			<div class="card-body">
+				<h5 class="card-title"></h5>
+					<p class="card-text">Никто ещё не оставлял отзывов о нашей работе, будьте первым!</p>
+			</div>
+		</div>
+		<br>		
+		{% endif %}	
+	</div>
+
+	{% endblock %}

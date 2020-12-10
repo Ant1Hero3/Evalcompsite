@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Услуги и стоимость {% endblock %}
+
+{% block content %}
+
+	<div class="container" id="price-table">
+		<h1 class="heading">Оценка недвижимости</h1>		
+    	<table>
+        	<tr><th>Оценка квартир и комнат</th><th class="table-right-side">Стоимость, руб.</th></tr>
+        	{% for apartment in apartments %}
+        	<tr><td>{{ apartment.location }}</td><td class="table-right-side">{{ apartment.price }}</td></tr>
+        	{% endfor %}
+
+        	<tr><th>Оценка коттеджей и домов</th><th class="table-right-side"></th></tr>
+        	{% for house in houses %}
+        	<tr><td>{{ house.location }}</td><td class="table-right-side">{{ house.price }}</td></tr>
+        	{% endfor %}
+
+        	<tr><th>Оценка земельных участков</th class="table-right-side"><th></th></tr>
+        	{% for land in land_plot %}
+        	<tr><td>{{ land.location }}</td><td class="table-right-side">{{ land.price }}</td></tr>
+        	{% endfor %}
+    	</table>
+	</div>
+
+{% endblock %}

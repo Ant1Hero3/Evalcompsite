@@ -1,0 +1,84 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %} Подать заявку {% endblock %}
+
+{% block content %}
+
+	<form action="{% url 'evalcompsite:createrequest' %}" method="POST">
+		{% csrf_token %}
+		<div class="container">
+			<div class="input-group mb-3" style="margin-top: 20px">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text">ФИО</span>
+	  			</div>
+	  			<input type="text" placeholder="Пример: Иванов" aria-label="Last name" name="last_name" class="form-control">
+	  			<input type="text" placeholder="Пример: Иван" aria-label="First name" name="first_name" class="form-control">
+	  			<input type="text" placeholder="Пример: Иванович" aria-label="Patronymic" name="patronymic" class="form-control">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="basic-addon1">email:</span>
+	  			</div>
+	  			<input type="text" class="form-control" placeholder="Пример: example@example.ru" aria-label="Адрес электронной почты" name="email" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="basic-addon1">Телефон:</span>
+	  			</div>
+	  			<input type="text" class="form-control" placeholder="Пример: +7 XXX XXX XX XX" aria-label="Номер телефона" name="phone_number" aria-describedby="basic-addon1" value="+7 ">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<label class="input-group-text" for="inputGroupSelect01">Объект оценки</label>
+	  			</div>
+	  			<select class="custom-select" id="inputGroupSelect01" name="eval_object">
+	    				<option selected>Выберите один из вариантов</option>
+	    				<option value="Квартира">Квартира</option>
+	    				<option value="Дом с земельным участком">Дом с земельным участком</option>
+	    				<option value="Земельный участок">Земельный участок</option>
+	    				<option value="Акции">Акции</option>
+	    				<option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
+	    				<option value="Оспаривание кадасровой стоимости">Оспаривание кадасровой стоимости</option>
+	    				<option value="Оспаривание кадасровой стоимости">Другое</option>
+	  			</select>
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<label class="input-group-text" for="inputGroupSelect01">Цель оценки</label>
+	  			</div>
+	  			<select class="custom-select" id="inputGroupSelect01" name="aim">
+	    				<option selected>Выберите один из вариантов</option>
+	    				<option value="Кредитование">Кредитование</option>
+	    				<option value="Страхование">Страхование</option>
+	    				<option value="Вступление в наследство">Вступление в наследство</option>
+	    				<option value="Для сдачи в аренду">Для сдачи в аренду</option>
+	    				<option value="Для решения имущественных споров">Для решения имущественных споров</option>
+	    				<option value="Оспаривание кадасровой стоимости">Другое</option>
+	  			</select>
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="basic-addon1">Адрес объекта оценки</span>
+	  			</div>
+	  			<input type="text" class="form-control" placeholder="Пример: Пермский край, г. Пермь, ул. Осинская, д. 8 ..." aria-label="Адрес объекта" name="address" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="basic-addon1">Цена покупки</span>
+	  			</div>
+	  			<input type="text" class="form-control" placeholder="Пример: 2 300 000" aria-label="Цена покупки" name="price" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text">Комментарии</span>
+	  			</div>
+	  			<textarea class="form-control" aria-label="Comment" name="comment"></textarea>
+			</div>
+			<div class="input-group-append">
+				<button class="btn btn-outline-secondary" type="submit">Отправить заявку</button>
+			</div>
+		</div>
+	</form>
+
+{% endblock %}
